@@ -98,5 +98,37 @@ The test will pass if the `fetch_data` function works correctly.
 - **Run Program**: Execute Python scripts using `python <file_path>`.
 - **Write Tests**: Use `unittest` to validate your code with test cases.
 
+## Lab0 : factorial.py
+
+```python
+
+def factorial(n):
+    if n < 0:
+        print("Factorial is not defined for negative numbers.")
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+if __name__ == "__main__":
+   
+    number = int(input("Enter a number: "))
+    print(f"Factorial of {number} is {factorial(number)}.")
+```   
+
+## test_factorial.py
+
+```python
+import unittest
+from factorial import factorial
+
+class TestFactorial(unittest.TestCase):
+    def test_factorial(self):
+        self.assertEqual(factorial(5), 120)
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
 
 
