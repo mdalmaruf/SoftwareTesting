@@ -114,7 +114,7 @@ if __name__ == "__main__":
    
     number = int(input("Enter a number: "))
     print(f"Factorial of {number} is {factorial(number)}.")
-```   
+```
 
 ## test_factorial.py
 
@@ -129,6 +129,16 @@ class TestFactorial(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-
+### Explain
+```
+Example:
+If n = 5, the loop runs as follows:
+Initial result = 1
+i = 2: result = 1 * 2 = 2
+i = 3: result = 2 * 3 = 6
+i = 4: result = 6 * 4 = 24
+i = 5: result = 24 * 5 = 120
+Final result = 120.
+```
 
 
