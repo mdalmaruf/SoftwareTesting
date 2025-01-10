@@ -129,7 +129,7 @@ class TestFactorial(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
-### Explain
+### loop Explaination
 ```
 Example:
 If n = 5, the loop runs as follows:
@@ -140,5 +140,13 @@ i = 4: result = 6 * 4 = 24
 i = 5: result = 24 * 5 = 120
 Final result = 120.
 ```
-
+### How about Recursion?
+   ```python
+   def factorial(n):
+       if n < 0:
+           raise ValueError("Factorial is not defined for negative numbers.")
+       if n == 0 or n == 1:  # Base case
+           return 1
+       return n * factorial(n - 1)  # Recursive call
+   ```
 
