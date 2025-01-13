@@ -46,7 +46,7 @@ student = {"name": "Alice", "age": 25}
 
 Python makes it easy to interact with users by taking inputs and displaying outputs.
 
----
+
 
 ##### **Taking Input**
 - Use `input()` to take user input. It always returns a string.
@@ -58,7 +58,7 @@ name = input("Enter your name: ")
 age = int(input("Enter your age: "))
 ```
 
----
+
 
 ##### **Displaying Output**
 - Use `print()` to display text or variables.
@@ -68,7 +68,7 @@ age = int(input("Enter your age: "))
 ```python
 print(f"Hello, {name}. You are {age} years old.")
 ```
----
+
 
 ##### **Expected Output**
 ```
