@@ -89,11 +89,15 @@ fruits = ["apple", "banana"]
 fruits.append("cherry")
 print(fruits)  # ['apple', 'banana', 'cherry']
 
-# Immutable Tuple
-coordinates = (10, 20)
-# coordinates[0] = 15  # Error: Tuples are immutable
+# Immutable Tuple: Tuples are immutable to ensure data integrity and make them hashable (usable as dictionary keys or in sets).
+coordinates = (10, 20, 30)  # Immutable Tuple
+# Accessing elements works fine
+print(coordinates[1])  # Output: 20
 
-# Immutable String
+# Attempting to modify a tuple
+# coordinates[1] = 25  # TypeError: 'tuple' object does not support item assignment
+
+# Immutable String: Strings in Python are immutable. Operations on strings return a new string rather than modifying the original.
 greeting = "Hello"
 new_greeting = greeting.replace("H", "J")
 
