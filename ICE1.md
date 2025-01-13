@@ -384,7 +384,7 @@ Frozen II, 150000000
 #### **Starter Code**:
 ```python
 # Author: Your Name
-# Date: YYYY-MM-DD
+# Student ID: 100XX
 # Description: Analyze movie budgets and save results to a file.
 
 def calculate_average_budget(movies):
@@ -418,6 +418,11 @@ def write_results_to_file(file_name, average_budget, high_budget_movies):
 if __name__ == "__main__":
     # Read movies from file
     movies = read_movies_from_file("MovieList.txt")
+
+    # Display all movies
+    #print("Full Movie List:")
+    #for name, budget in movies:
+    #    print(f"  {name}: ${budget:,}")
 
     # Calculate average budget
     average_budget = calculate_average_budget(movies)
