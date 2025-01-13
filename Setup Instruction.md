@@ -98,6 +98,8 @@ The test will pass if the `fetch_data` function works correctly.
 - **Run Program**: Execute Python scripts using `python <file_path>`.
 - **Write Tests**: Use `unittest` to validate your code with test cases.
 
+
+# Class Exercise or Practice
 ## Lab0 : factorial.py
 
 ```python
