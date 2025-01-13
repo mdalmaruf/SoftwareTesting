@@ -16,6 +16,47 @@ Python offers several data types for handling data:
 - **list**: Mutable collection (e.g., `[1, 2, 3]`).
 - **tuple**: Immutable collection (e.g., `(1, 2, 3)`).
 - **dict**: Key-value pairs (e.g., `{"name": "Alice", "age": 25}`).
+  #### **Examples**:
+```python
+# Integers and Floats
+x = 10
+y = 3.14
+
+# Strings
+greeting = "Hello, Python!"
+
+# Boolean
+is_active = True
+
+# List
+fruits = ["apple", "banana", "cherry"]
+
+# Tuple
+coordinates = (10, 20, 30)
+
+# Dictionary
+student = {"name": "Alice", "age": 25}
+```
+
+---
+
+### **1.2 Mutable vs Immutable Types**
+- **Mutable**: Can be changed (e.g., `list`, `dict`).
+- **Immutable**: Cannot be changed (e.g., `tuple`, `str`).
+
+#### **Examples**:
+```python
+# Mutable List
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)  # ['apple', 'banana', 'cherry']
+
+# Immutable Tuple
+coordinates = (10, 20)
+# coordinates[0] = 15  # Error: Tuples are immutable
+```
+
+---
 
 ### **2. Python Collections: Lists, Tuples, and Dictionaries**
 #### **List Example**
@@ -61,47 +102,7 @@ Python supports the following types of data:
 - **tuple**: Ordered, immutable collections (e.g., `(1, 2, 3)`).
 - **dict**: Key-value pairs (e.g., `{"name": "Alice", "age": 25}`).
 
-#### **Examples**:
-```python
-# Integers and Floats
-x = 10
-y = 3.14
 
-# Strings
-greeting = "Hello, Python!"
-
-# Boolean
-is_active = True
-
-# List
-fruits = ["apple", "banana", "cherry"]
-
-# Tuple
-coordinates = (10, 20, 30)
-
-# Dictionary
-student = {"name": "Alice", "age": 25}
-```
-
----
-
-### **1.2 Mutable vs Immutable Types**
-- **Mutable**: Can be changed (e.g., `list`, `dict`).
-- **Immutable**: Cannot be changed (e.g., `tuple`, `str`).
-
-#### **Examples**:
-```python
-# Mutable List
-fruits = ["apple", "banana"]
-fruits.append("cherry")
-print(fruits)  # ['apple', 'banana', 'cherry']
-
-# Immutable Tuple
-coordinates = (10, 20)
-# coordinates[0] = 15  # Error: Tuples are immutable
-```
-
----
 
 ### **1.3 Loops**
 Loops allow repetition of code.
