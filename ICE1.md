@@ -114,7 +114,7 @@ print(new_greeting)   # Output: Jello (a new string is created)
 | **Mutability**     | Mutable (modifiable).         | Immutable (cannot modify).    | Mutable (modifiable).         |
 | **Indexing**       | Supports indexing.            | Supports indexing.            | Key-based access (not indexed). |
 | **Duplicates**     | Allows duplicates.            | Allows duplicates.            | Keys must be unique; values can be duplicated. |
-| **Usage**          | General-purpose collection.   | Fixed collection of data.     | Mapping data via keys.         |
+| **Usage**          | General-purpose collection (Dynamic collections where data changes frequently).   | Fixed collection of data (Fixed, unchanging collections to ensure data integrity).     | Mapping data via keys ( Key-value pairs for quick lookups or mappings).         |
 | **Example**        | `[1, 2, 3]`                   | `(1, 2, 3)`                   | `{"a": 1, "b": 2}`            |
 ---
 
