@@ -350,6 +350,12 @@ with open("example.txt", "r") as file:
     content = file.read()
     print(content)  # Hello, World!
 ```
+- "r"	Read Mode	Default mode. Opens the file for reading. The file must exist.
+- "w"	Write Mode	Opens the file for writing. If the file exists, it is truncated (content erased).
+- "a"	Append Mode	Opens the file for appending. Adds data to the end of the file if it exists.
+- "r+"	Read and Write Mode	Opens the file for both reading and writing. The file must exist.
+- "w+"	Write and Read Mode	Opens the file for writing and reading. Truncates the file if it exists.
+- "a+"	Append and Read Mode
 
 ---
 
