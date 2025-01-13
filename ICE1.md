@@ -95,7 +95,7 @@ coordinates = (10, 20, 30)  # Immutable Tuple
 print(coordinates[1])  # Output: 20
 
 # Attempting to modify a tuple
-# coordinates[1] = 25  # TypeError: 'tuple' object does not support item assignment
+coordinates[1] = 25  # TypeError: 'tuple' object does not support item assignment
 
 # Immutable String: Strings in Python are immutable. Operations on strings return a new string rather than modifying the original.
 greeting = "Hello"
