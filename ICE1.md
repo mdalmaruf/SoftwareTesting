@@ -106,7 +106,7 @@ print(new_greeting)   # Output: Jello (a new string is created)
 
 
 ```
-# Differences Between List, Tuple, and Dictionary
+##### Differences Between List, Tuple, and Dictionary
 
 | Feature            | List                          | Tuple                         | Dictionary                     |
 |--------------------|-------------------------------|-------------------------------|--------------------------------|
