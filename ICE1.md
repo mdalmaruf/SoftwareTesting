@@ -81,7 +81,7 @@ movie = {"title": "Interstellar", "director": "Christopher Nolan", "year": 2014}
 print(movie["title"])  # Interstellar
 ```
 ---
-### **2. Loops**
+## **2. Loops**
 Loops allow repetition of code.
 
 #### **For Loop**:
@@ -103,7 +103,7 @@ while count < 3:
 ---
 
 
-### **3. Conditionals**
+## **3. Conditionals**
 Conditionals allow decision-making.
 
 #### **Example**:
@@ -117,7 +117,7 @@ else:
 ```
 
 ---
-### **4. Important Libraries**
+## **4. Important Libraries**
 - `math`: For mathematical operations.
 - `random`: For generating random numbers.
 - `statistics`: For statistical calculations.
