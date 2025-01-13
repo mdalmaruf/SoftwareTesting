@@ -58,7 +58,7 @@ coordinates = (10, 20)
 
 ---
 
-### **2. Python Collections: Lists, Tuples, and Dictionaries**
+### **1.3 Python Collections: Lists, Tuples, and Dictionaries**
 #### **List Example**
 ```python
 # Lists are mutable and can store mixed data types
@@ -80,7 +80,49 @@ print(movie_details)  # ('Interstellar', 'Christopher Nolan', 2014, 165000000)
 movie = {"title": "Interstellar", "director": "Christopher Nolan", "year": 2014}
 print(movie["title"])  # Interstellar
 ```
+---
+### **2. Loops**
+Loops allow repetition of code.
 
+#### **For Loop**:
+```python
+# Iterating over a list
+movies = ["Inception", "Titanic", "Avatar"]
+for movie in movies:
+    print(movie)
+```
+
+#### **While Loop**:
+```python
+# Repeating until a condition is met
+count = 0
+while count < 3:
+    print("Count:", count)
+    count += 1
+```
+---
+
+
+### **3. Conditionals**
+Conditionals allow decision-making.
+
+#### **Example**:
+```python
+# If-else Example
+budget = 200000000
+if budget > 150000000:
+    print("High budget movie")
+else:
+    print("Low budget movie")
+```
+
+---
+### **4. Important Libraries**
+- `math`: For mathematical operations.
+- `random`: For generating random numbers.
+- `statistics`: For statistical calculations.
+- `os`: For file and directory operations
+---
 
 # Comprehensive Python Tutorial: Basics, Data Types, and Movie Budget Analysis
 
@@ -104,39 +146,7 @@ Python supports the following types of data:
 
 
 
-### **1.3 Loops**
-Loops allow repetition of code.
 
-#### **For Loop**:
-```python
-movies = ["Inception", "Titanic", "Avatar"]
-for movie in movies:
-    print(movie)
-```
-
-#### **While Loop**:
-```python
-count = 0
-while count < 3:
-    print("Count:", count)
-    count += 1
-```
-
----
-
-### **1.4 Conditionals**
-Conditionals allow decision-making.
-
-#### **Example**:
-```python
-budget = 200000000
-if budget > 150000000:
-    print("High budget movie")
-else:
-    print("Low budget movie")
-```
-
----
 
 ### **1.5 File Handling**
 Python allows reading from and writing to files.
