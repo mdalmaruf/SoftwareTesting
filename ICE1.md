@@ -92,6 +92,15 @@ print(fruits)  # ['apple', 'banana', 'cherry']
 # Immutable Tuple
 coordinates = (10, 20)
 # coordinates[0] = 15  # Error: Tuples are immutable
+
+# Immutable String
+greeting = "Hello"
+new_greeting = greeting.replace("H", "J")
+
+print(greeting)       # Output: Hello (original remains unchanged)
+print(new_greeting)   # Output: Jello (a new string is created)
+
+
 ```
 
 ---
