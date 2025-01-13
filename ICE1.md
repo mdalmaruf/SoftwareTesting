@@ -100,6 +100,155 @@ while count < 3:
     count += 1
 ```
 ---
+#### **2.1 Iterating Over a List**
+Lists are ordered and mutable, allowing iteration over their elements.
+
+##### **Code Example:**
+```python
+# List of movies
+movies = ["Inception", "Titanic", "Avatar"]
+
+# Iterating over elements
+for movie in movies:
+    print(movie)
+
+# Iterating with index and value
+for index, movie in enumerate(movies):
+    print(f"Index {index}: {movie}")
+```
+
+##### **Output:**
+```
+Inception
+Titanic
+Avatar
+Index 0: Inception
+Index 1: Titanic
+Index 2: Avatar
+```
+
+---
+
+#### **2.2 Iterating Over a Tuple**
+Tuples are ordered and immutable.
+
+##### **Code Example:**
+```python
+# Tuple of movie details
+movie_details = ("Inception", 2010, "Christopher Nolan")
+
+# Iterating over elements
+for detail in movie_details:
+    print(detail)
+
+# Iterating with index and value
+for index, detail in enumerate(movie_details):
+    print(f"Index {index}: {detail}")
+```
+
+##### **Output:**
+```
+Inception
+2010
+Christopher Nolan
+Index 0: Inception
+Index 1: 2010
+Index 2: Christopher Nolan
+```
+
+---
+
+#### **2.3 Iterating Over an Array**
+Arrays are efficient, fixed-type collections, often used for numerical data.
+
+##### **Code Example:**
+```python
+from array import array
+
+# Array of budgets (in millions)
+budgets = array("i", [165, 200, 356])
+
+# Iterating over elements
+for budget in budgets:
+    print(budget)
+
+# Iterating with index and value
+for index, budget in enumerate(budgets):
+    print(f"Index {index}: {budget}")
+```
+
+##### **Output:**
+```
+165
+200
+356
+Index 0: 165
+Index 1: 200
+Index 2: 356
+```
+
+---
+
+#### **2.4 Iterating Over a Dictionary**
+Dictionaries store data as key-value pairs.
+
+##### **Code Example:**
+```python
+# Dictionary of movie and budget
+movie_budgets = {"Inception": 165, "Titanic": 200, "Avatar": 356}
+
+# Iterating over keys
+for movie in movie_budgets:
+    print(movie)
+
+# Iterating over keys and values
+for movie, budget in movie_budgets.items():
+    print(f"{movie}: ${budget}M")
+
+# Iterating over keys with index
+for index, movie in enumerate(movie_budgets):
+    print(f"Index {index}: {movie} - ${movie_budgets[movie]}M")
+```
+
+##### **Output:**
+```
+Inception
+Titanic
+Avatar
+Inception: $165M
+Titanic: $200M
+Avatar: $356M
+Index 0: Inception - $165M
+Index 1: Titanic - $200M
+Index 2: Avatar - $356M
+```
+
+---
+
+#### **2.5 Iterating Using While Loop**
+While loops execute until a condition is met.
+
+##### **Code Example:**
+```python
+# Iterating through a list using while loop
+movies = ["Inception", "Titanic", "Avatar"]
+index = 0
+
+while index < len(movies):
+    print(f"Movie at index {index}: {movies[index]}")
+    index += 1
+```
+
+##### **Output:**
+```
+Movie at index 0: Inception
+Movie at index 1: Titanic
+Movie at index 2: Avatar
+```
+---
+
+
+---
 
 
 ## **3. Conditionals**
