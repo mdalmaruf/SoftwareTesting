@@ -1,8 +1,7 @@
 # ICE1: Review of Python
 
 ## **Introduction**
-This activity is designed to review fundamental Python concepts and guide you in completing the assignment for analyzing movie budgets.
-
+This tutorial covers fundamental Python concepts and provides a step-by-step guide to completing an assignment that analyzes movie budgets. You will learn about Python's data types, loops, conditionals, and file handling.
 ---
 
 ## **Part 1: Review of Python Concepts**
@@ -124,31 +123,8 @@ else:
 - `os`: For file and directory operations
 ---
 
-# Comprehensive Python Tutorial: Basics, Data Types, and Movie Budget Analysis
 
-## **Introduction**
-This tutorial covers fundamental Python concepts and provides a step-by-step guide to completing an assignment that analyzes movie budgets. You will learn about Python's data types, loops, conditionals, and file handling.
-
----
-
-## **1. Review of Python Basics**
-
-### **1.1 Python Data Types**
-Python supports the following types of data:
-
-- **int**: Integer values (e.g., `10`, `-5`).
-- **float**: Decimal values (e.g., `3.14`, `-1.0`).
-- **str**: Text values (e.g., `"Hello, World!"`).
-- **bool**: Boolean values (`True`, `False`).
-- **list**: Ordered, mutable collections (e.g., `[1, 2, 3]`).
-- **tuple**: Ordered, immutable collections (e.g., `(1, 2, 3)`).
-- **dict**: Key-value pairs (e.g., `{"name": "Alice", "age": 25}`).
-
-
-
-
-
-### **1.5 File Handling**
+## **5. File Handling**
 Python allows reading from and writing to files.
 
 #### **Example**:
@@ -165,7 +141,7 @@ with open("example.txt", "r") as file:
 
 ---
 
-## **2. Assignment: Movie Budget Analysis**
+## **Part 2: Assignment: Movie Budget Analysis**
 
 ### **Objective**
 1. Calculate the **average budget** of movies.
@@ -226,7 +202,8 @@ def write_results_to_file(file_name, average_budget, high_budget_movies):
         for name, budget in high_budget_movies:
             file.write(f"{name}: ${budget:,}\n")
 
-def main():
+
+if __name__ == "__main__":
     # Read movies from file
     movies = read_movies_from_file("MovieList.txt")
 
@@ -245,9 +222,6 @@ def main():
     # Write results to output file
     write_results_to_file("Output.txt", average_budget, high_budget_movies)
     print("Results saved to 'Output.txt'.")
-
-if __name__ == "__main__":
-    main()
 ```
 
 ---
