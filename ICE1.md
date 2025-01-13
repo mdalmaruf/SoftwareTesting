@@ -16,7 +16,9 @@ Python offers several data types for handling data:
 - **list**: Mutable collection (e.g., `[1, 2, 3]`).
 - **tuple**: Immutable collection (e.g., `(1, 2, 3)`).
 - **dict**: Key-value pairs (e.g., `{"name": "Alice", "age": 25}`).
-  #### **Examples**:
+
+ 
+ #### **Examples**:
 ```python
 # Integers and Floats
 x = 10
@@ -40,11 +42,47 @@ student = {"name": "Alice", "age": 25}
 
 ---
 
-### **1.2 Mutable vs Immutable Types**
+#### ** User Input and Display**: 
+
+Python makes it easy to interact with users by taking inputs and displaying outputs.
+
+---
+
+##### **Taking Input**
+- Use `input()` to take user input. It always returns a string.
+- Convert input to other data types if needed (e.g., `int`, `float`).
+
+##### **Code Example**
+```python
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+```
+
+---
+
+##### **Displaying Output**
+- Use `print()` to display text or variables.
+- Use **f-strings** or `.format()` for inline formatting.
+
+###### **Code Example**
+```python
+print(f"Hello, {name}. You are {age} years old.")
+```
+---
+
+##### **Expected Output**
+```
+Enter your name: Alice
+Enter your age: 25
+Hello, Alice. You are 25 years old.
+```
+---
+
+#### **1.2 Mutable vs Immutable Types**
 - **Mutable**: Can be changed (e.g., `list`, `dict`).
 - **Immutable**: Cannot be changed (e.g., `tuple`, `str`).
 
-#### **Examples**:
+##### **Examples**:
 ```python
 # Mutable List
 fruits = ["apple", "banana"]
@@ -58,15 +96,15 @@ coordinates = (10, 20)
 
 ---
 
-### **1.3 Python Collections: Lists, Tuples, and Dictionaries**
-#### **List Example**
+#### **1.3 Python Collections: Lists, Tuples, and Dictionaries**
+##### **List Example**
 ```python
 # Lists are mutable and can store mixed data types
 movies = ["Interstellar", "Inception", "Titanic"]
 movies.append("Avatar")
 print(movies)  # ['Interstellar', 'Inception', 'Titanic', 'Avatar']
 ```
-#### **Tuple Example**
+##### **Tuple Example**
 ```python
 # Tuples are immutable
 movie_details = ("Interstellar", "Christopher Nolan", 2014, 165000000)
@@ -74,7 +112,7 @@ print(movie_details)  # ('Interstellar', 'Christopher Nolan', 2014, 165000000)
 
 ```
 
-#### **Dictionary Example**
+##### **Dictionary Example**
 ```python
 # Dictionaries store key-value pairs
 movie = {"title": "Interstellar", "director": "Christopher Nolan", "year": 2014}
