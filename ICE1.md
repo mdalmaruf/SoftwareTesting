@@ -106,6 +106,17 @@ print(new_greeting)   # Output: Jello (a new string is created)
 
 
 ```
+# Differences Between List, Tuple, and Dictionary
+
+| Feature            | List                          | Tuple                         | Dictionary                     |
+|--------------------|-------------------------------|-------------------------------|--------------------------------|
+| **Definition**     | Ordered, mutable collection.  | Ordered, immutable collection.| Unordered, mutable collection of key-value pairs. |
+| **Syntax**         | `[` and `]`                   | `(` and `)`                   | `{` and `}`                   |
+| **Mutability**     | Mutable (modifiable).         | Immutable (cannot modify).    | Mutable (modifiable).         |
+| **Indexing**       | Supports indexing.            | Supports indexing.            | Key-based access (not indexed). |
+| **Duplicates**     | Allows duplicates.            | Allows duplicates.            | Keys must be unique; values can be duplicated. |
+| **Usage**          | General-purpose collection.   | Fixed collection of data.     | Mapping data via keys.         |
+| **Example**        | `[1, 2, 3]`                   | `(1, 2, 3)`                   | `{"a": 1, "b": 2}`            |
 
 ---
 
