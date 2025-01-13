@@ -3,6 +3,8 @@
 ## **Introduction**
 This tutorial covers fundamental Python concepts and provides a step-by-step guide to completing an assignment that analyzes movie budgets. You will learn about Python's data types, loops, conditionals, and file handling.
 
+---
+
 ## **Part 1: Review of Python Concepts**
 
 ### **1. Python Data Types**
