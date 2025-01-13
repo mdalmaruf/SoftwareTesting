@@ -106,17 +106,7 @@ print(new_greeting)   # Output: Jello (a new string is created)
 
 
 ```
-##### Differences Between List, Tuple, and Dictionary:
-| Feature            | List                          | Tuple                         | Dictionary                     |
-|--------------------|-------------------------------|-------------------------------|--------------------------------|
-| **Definition**     | Ordered, mutable collection.  | Ordered, immutable collection.| Unordered, mutable collection of key-value pairs. |
-| **Syntax**         | `[`   `]`                     | `(`   `)`                     | `{`   `}`                     |
-| **Mutability**     | Mutable (modifiable).         | Immutable (cannot modify).    | Mutable (modifiable).         |
-| **Indexing**       | Supports indexing.            | Supports indexing.            | Key-based access (not indexed). |
-| **Duplicates**     | Allows duplicates.            | Allows duplicates.            | Keys must be unique; values can be duplicated. |
-| **Usage**          | General-purpose collection (Dynamic collections where data changes frequently).   | Fixed collection of data (Fixed, unchanging collections to ensure data integrity).     | Mapping data via keys ( Key-value pairs for quick lookups or mappings).         |
-| **Example**        | `[1, 2, 3]`                   | `(1, 2, 3)`                   | `{"a": 1, "b": 2}`            |
----
+
 
 #### **1.3 Python Collections: Lists, Tuples, and Dictionaries**
 ##### **List Example**
@@ -140,6 +130,18 @@ print(movie_details)  # ('Interstellar', 'Christopher Nolan', 2014, 165000000)
 movie = {"title": "Interstellar", "director": "Christopher Nolan", "year": 2014}
 print(movie["title"])  # Interstellar
 ```
+##### Differences Between List, Tuple, and Dictionary:
+
+| Feature            | List                          | Tuple                         | Dictionary                     |
+|--------------------|-------------------------------|-------------------------------|--------------------------------|
+| **Definition**     | Ordered, mutable collection.  | Ordered, immutable collection.| Unordered, mutable collection of key-value pairs. |
+| **Syntax**         | `[`   `]`                     | `(`   `)`                     | `{`   `}`                     |
+| **Mutability**     | Mutable (modifiable).         | Immutable (cannot modify).    | Mutable (modifiable).         |
+| **Indexing**       | Supports indexing.            | Supports indexing.            | Key-based access (not indexed). |
+| **Duplicates**     | Allows duplicates.            | Allows duplicates.            | Keys must be unique; values can be duplicated. |
+| **Usage**          | General-purpose collection (Dynamic collections where data changes frequently).   | Fixed collection of data (Fixed, unchanging collections to ensure data integrity).     | Mapping data via keys ( Key-value pairs for quick lookups or mappings).         |
+| **Example**        | `[1, 2, 3]`                   | `(1, 2, 3)`                   | `{"a": 1, "b": 2}`            |
+---
 ---
 ## **2. Loops**
 Loops allow repetition of code.
