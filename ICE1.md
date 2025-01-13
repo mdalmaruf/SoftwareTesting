@@ -142,7 +142,7 @@ print(movie["title"])  # Interstellar
 | **Usage**          | General-purpose collection (Dynamic collections where data changes frequently).   | Fixed collection of data (Fixed, unchanging collections to ensure data integrity).     | Mapping data via keys ( Key-value pairs for quick lookups or mappings).         |
 | **Example**        | `[1, 2, 3]`                   | `(1, 2, 3)`                   | `{"a": 1, "b": 2}`            |
 ---
----
+
 ## **2. Loops**
 Loops allow repetition of code.
 
