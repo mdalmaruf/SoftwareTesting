@@ -110,7 +110,7 @@ print(new_greeting)   # Output: Jello (a new string is created)
 | Feature            | List                          | Tuple                         | Dictionary                     |
 |--------------------|-------------------------------|-------------------------------|--------------------------------|
 | **Definition**     | Ordered, mutable collection.  | Ordered, immutable collection.| Unordered, mutable collection of key-value pairs. |
-| **Syntax**         | `[` and `]`                   | `(` and `)`                   | `{` and `}`                   |
+| **Syntax**         | `[`   `]`                     | `(`   `)`                     | `{`   `}`                     |
 | **Mutability**     | Mutable (modifiable).         | Immutable (cannot modify).    | Mutable (modifiable).         |
 | **Indexing**       | Supports indexing.            | Supports indexing.            | Key-based access (not indexed). |
 | **Duplicates**     | Allows duplicates.            | Allows duplicates.            | Keys must be unique; values can be duplicated. |
