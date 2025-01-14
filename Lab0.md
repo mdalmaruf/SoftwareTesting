@@ -169,3 +169,142 @@ if __name__ == "__main__":
 ---
 
 Download the example files and scripts from the GitHub repository: [Example Repo](https://github.com/example/testing-lab).
+
+
+
+# Fixing ImportError in Python Tests
+
+## Objective
+This guide walks students through fixing the **ImportError** encountered when running Python tests, using the example of a `calculator` module and `test_calculator.py` file.
+
+---
+
+## The Problem
+The error message:
+```
+ImportError: Failed to import test module: test_calculator
+```
+occurs because Python cannot locate or recognize the module `Lab0.calculator`. This happens due to missing `__init__.py` files or incorrect Python paths.
+
+---
+
+## Step-by-Step Solution
+
+### Step 1: Understand the Project Structure
+Your project should have the following structure:
+```
+LabCode-INFT-1207/
+├── Lab0/
+│   ├── __init__.py
+│   ├── calculator.py
+│   ├── test/
+│       ├── __init__.py
+│       ├── test_calculator.py
+```
+
+- **`Lab0/__init__.py`** and **`Lab0/test/__init__.py`** are required to treat these folders as Python modules.
+
+---
+
+### Step 2: Create `__init__.py` Files
+1. Add an empty `__init__.py` file to the `Lab0` folder:
+   ```bash
+   touch Lab0/__init__.py
+   ```
+
+2. Add another empty `__init__.py` file to the `Lab0/test` folder:
+   ```bash
+   touch Lab0/test/__init__.py
+   ```
+
+---
+
+### Step 3: Update the Import in `test_calculator.py`
+1. If running tests from the root (`LabCode-INFT-1207`), ensure your imports are:
+   ```python
+   from Lab0.calculator import add, subtract
+   ```
+
+2. If running tests directly from the `test` folder, use:
+   ```python
+   from calculator import add, subtract
+   ```
+
+---
+
+### Step 4: Run Tests
+
+#### 1. Run All Tests
+From the root directory (`LabCode-INFT-1207`):
+```bash
+python -m unittest discover -s Lab0/test -p "*.py"
+```
+
+#### 2. Run a Specific Test File
+Run only the `test_calculator.py` file:
+```bash
+python -m unittest Lab0.test.test_calculator
+```
+
+---
+
+### Step 5: Export Python Path (Optional)
+If you encounter further import errors, set the Python path to include the project directory.
+
+#### On Linux/Mac:
+```bash
+export PYTHONPATH=path/to/LabCode-INFT-1207
+```
+
+#### On Windows Command Prompt:
+```cmd
+set PYTHONPATH=path\to\LabCode-INFT-1207
+```
+
+#### On Windows PowerShell:
+```powershell
+$env:PYTHONPATH="path\to\LabCode-INFT-1207"
+```
+
+Re-run the tests:
+```bash
+python -m unittest discover -s Lab0/test -p "*.py"
+```
+
+---
+
+### Verify Your Setup
+To ensure Python can find the modules, add the following to `test_calculator.py`:
+```python
+import sys
+print(sys.path)
+```
+
+This should include the path to your root directory (`LabCode-INFT-1207`).
+
+---
+
+## Summary of Commands
+1. Add `__init__.py` files:
+   ```bash
+   touch Lab0/__init__.py
+   touch Lab0/test/__init__.py
+   ```
+
+2. Run all tests:
+   ```bash
+   python -m unittest discover -s Lab0/test -p "*.py"
+   ```
+
+3. Run specific tests:
+   ```bash
+   python -m unittest Lab0.test.test_calculator
+   ```
+
+4. (Optional) Set Python path:
+   ```bash
+   export PYTHONPATH=path/to/LabCode-INFT-1207
+   ```
+
+By following these steps, you will resolve the import issue and successfully run your Python tests.
+
