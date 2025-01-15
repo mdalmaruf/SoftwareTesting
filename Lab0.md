@@ -51,6 +51,9 @@ Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0v
    eval $(ssh-agent -s)
    > Agnet pid $088
    ```
+   ```bash
+   ssh-add ~/.ssh/id_ed25519
+   ```
 6. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)
 7. For more help: Check [this](https://www.warp.dev/terminus/git-clone-ssh)
 
