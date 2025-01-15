@@ -51,7 +51,8 @@ Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0v
    eval $(ssh-agent -s)
    > Agnet pid $088
    ```
-6. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)   
+6. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)
+7. For more help: Check [this](https://www.warp.dev/terminus/git-clone-ssh)
 
 
 ### Fork the Project
@@ -67,15 +68,20 @@ Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0v
 
 ### Try Push and Pull Operations
 1. Make changes to the code locally (you’ll do this later in the lab).
-2. Push changes to your forked repository:
+   ```bash
+     git init
+     git remote set-url origin git@github.com:username/repository.git
+   ```
+3. Push changes to your forked repository:
    ```bash
    git add .
    git commit -m "Initial test changes"
+   git status
    git push origin main
    ```
-3. Pull changes from the original repository (if any):
+4. Pull changes from the original repository (if any):
    ```bash
-   git pull upstream main
+   git pull origin main
    ```
 
 ---
