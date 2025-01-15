@@ -25,13 +25,23 @@ Before starting, ensure you have the following installed:
 
 ### Set Up GitHub
 Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0vM5g) for more details.
-How to generate [SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 1. Create a GitHub account at [github.com](https://github.com).
 2. Configure Git with your username and email:
    ```bash
    git config --global user.name "Your Name"
    git config --global user.email "your-email@example.com"
    ```
+3. How to generate [SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+4. Adding Your SSH Key to the SSH-Agent
+
+   - Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key.
+   - Ensure the ssh-agent is running: If you are using another terminal prompt. such as Git for Windows, you can use start it manually:
+   ```bash
+   # start the ssh-agent in the background
+   eval $(ssh-agent -s)
+   > Agnet pid $088
+   ```
+
 
 ### Fork the Project
 1. Visit the GitHub repository: [Example Repo](https://github.com/example/testing-lab).
