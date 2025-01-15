@@ -32,7 +32,17 @@ Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0v
    git config --global user.email "your-email@example.com"
    ```
 3. How to generate [SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-4. Adding Your SSH Key to the SSH-Agent
+   - Open git bash
+   - run the following command:
+     ```bash
+     ssh-keygen -t ed25519 -C "your_email@example.com"
+     ```
+   - Put enter if you don't want the password to set
+   - To Copy the Key
+     ```bash
+     clip < ~/.ssh/id_ed25519.pub
+     ```
+5. Adding Your SSH Key to the SSH-Agent
 
    - Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key.
    - Ensure the ssh-agent is running: If you are using another terminal prompt. such as Git for Windows, you can use start it manually:
@@ -41,6 +51,7 @@ Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0v
    eval $(ssh-agent -s)
    > Agnet pid $088
    ```
+6. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)   
 
 
 ### Fork the Project
