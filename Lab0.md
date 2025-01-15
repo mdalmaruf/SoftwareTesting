@@ -56,14 +56,14 @@ Please follow this [YouTube Video Link](https://www.youtube.com/watch?v=sVuV9Z0v
 
 
 ### Fork the Project
-1. Visit the GitHub repository: [Example Repo](https://github.com/example/testing-lab).
+1. Visit the GitHub repository: [Example Repo](https://github.com/mdalmaruf/LabCode-INFT-1207.git).
 2. Click **Fork** to copy the repository to your GitHub account.
 
 ### Clone the Repository Locally
 1. Copy the repository URL from your forked repository.
 2. Clone it using Git:
    ```bash
-   git clone https://github.com/your-username/testing-lab.git
+   git clone https://github.com/mdalmaruf/LabCode-INFT-1207.git
    ```
 
 ### Try Push and Pull Operations
@@ -196,7 +196,7 @@ if __name__ == "__main__":
 
 ---
 
-Download the example files and scripts from the GitHub repository: [Example Repo](https://github.com/example/testing-lab).
+Download the example files and scripts from the GitHub repository: [Example Repo](https://github.com/mdalmaruf/LabCode-INFT-1207.git).
 
 
 
