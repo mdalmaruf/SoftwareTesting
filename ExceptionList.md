@@ -239,27 +239,45 @@ def get_student_grade(students, name):
         print(f"Error: Student '{name}' not found.")
         return None
 
-# Example usage
-students = {
-    "Alice": [85, 90, 78],
-    "Bob": [92, 88, 95],
-    "Charlie": []
-}
+def main():
+    students = {
+        "Alice": [85, 90, 78],
+        "Bob": [92, 88, 95],
+        "Charlie": []
+    }
 
-try:
-    # Accessing student data
-    name = input("Enter student name: ")
-    grades = get_student_grade(students, name)
+    try:
+        # Accessing student data
+        name = input("Enter student name: ")
+        grades = get_student_grade(students, name)
 
-    if grades is not None:
-        # Calculate the average grade
-        avg = calculate_average(grades)
-        if avg is not None:
-            print(f"Average grade for {name}: {avg:.2f}")
-except Exception as e:
-    print(f"Unexpected error: {e}")
+        if grades is not None:
+            # Calculate the average grade
+            avg = calculate_average(grades)
+            if avg is not None:
+                print(f"Average grade for {name}: {avg:.2f}")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
 
-print("Program executed successfully.")
+    print("Program executed successfully.")
+
+if __name__ == "__main__":
+    main()
 ```
 
-These examples provide a comprehensive guide to understanding Python exceptions, their types, and how to handle them efficiently.
+## Explanation of the Code
+
+1. **Function `calculate_average(grades)`:**  
+   - Checks if the grades list is empty, and raises a `ValueError` if so.  
+   - Handles division by zero if an empty list is provided.
+   - Catches `TypeError` if non-numeric data is passed.
+
+2. **Function `get_student_grade(students, name)`:**  
+   - Looks up the student's grades in the dictionary.  
+   - Raises a `KeyError` if the student's name is not found.
+
+3. **Exception Handling in Main Code:**  
+   - Uses `input()` to get student names and check for errors.
+   - Prints an appropriate message based on the exception encountered.
+
+---
