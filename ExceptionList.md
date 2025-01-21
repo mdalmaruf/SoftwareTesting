@@ -214,5 +214,52 @@ finally:
 ```
 
 ---
+# Case Example: Student Grading System
+A simple student grading system that includes handling of various potential exceptions like ValueError, KeyError, and ZeroDivisionError.
+
+```python
+def calculate_average(grades):
+    try:
+        if not grades:
+            raise ValueError("No grades provided. Cannot calculate average.")
+        total = sum(grades)
+        average = total / len(grades)
+        return average
+    except ZeroDivisionError:
+        print("Error: Division by zero occurred.")
+        return None
+    except TypeError:
+        print("Error: Invalid type encountered in the grade list.")
+        return None
+
+def get_student_grade(students, name):
+    try:
+        return students[name]
+    except KeyError:
+        print(f"Error: Student '{name}' not found.")
+        return None
+
+# Example usage
+students = {
+    "Alice": [85, 90, 78],
+    "Bob": [92, 88, 95],
+    "Charlie": []
+}
+
+try:
+    # Accessing student data
+    name = input("Enter student name: ")
+    grades = get_student_grade(students, name)
+
+    if grades is not None:
+        # Calculate the average grade
+        avg = calculate_average(grades)
+        if avg is not None:
+            print(f"Average grade for {name}: {avg:.2f}")
+except Exception as e:
+    print(f"Unexpected error: {e}")
+
+print("Program executed successfully.")
+```
 
 These examples provide a comprehensive guide to understanding Python exceptions, their types, and how to handle them efficiently.
