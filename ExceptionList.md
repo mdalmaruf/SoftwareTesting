@@ -276,8 +276,9 @@ if __name__ == "__main__":
    - Looks up the student's grades in the dictionary.  
    - Raises a `KeyError` if the student's name is not found.
 
-3. **Exception Handling in Main Code:**  
-   - Uses `input()` to get student names and check for errors.
-   - Prints an appropriate message based on the exception encountered.
+3. **`main` Function:**  
+   - Contains the primary logic for student input and grade calculation.
+   - Handles exceptions for graceful error handling.
+   - Uses `if __name__ == "__main__":` to ensure the script runs properly.
 
 ---
