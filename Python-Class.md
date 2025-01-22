@@ -77,6 +77,19 @@ print(student1.name)  # Works (public)
 print(student1._age)  # Works (protected, but not recommended)
 # print(student1.__grade)  # Raises AttributeError
 ```
+# Difference Between Public, Protected, and Private Attributes in Python
+
+## Overview
+
+Python uses naming conventions to define access control for class attributes and methods:
+
+| Attribute Type | Syntax              | Accessibility                 | Example Usage                    |
+|----------------|---------------------|-------------------------------|----------------------------------|
+| Public         | `self.attribute`     | Accessible from anywhere       | `self.name = "Alice"`            |
+| Protected      | `self._attribute`    | Accessible within class and subclasses | `self._age = 25`             |
+| Private        | `self.__attribute`   | Not accessible directly outside the class | `self.__salary = 50000`  |
+
+---
 ---
 ## Step 4: Class Methods vs Instance Methods vs Static Methods
 Python supports three types of methods:
