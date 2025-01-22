@@ -15,7 +15,6 @@ A class in Python is a blueprint for creating objects. It allows us to group rel
 
 ![Components of a Class](images/Class.png)
 ![Components of a Class](images/Class0.png)
-![Components of a Class](images/Class.png)
 ![Components of a Class](images/Class4.png)
 
 ## Step 1: Creating a Basic Class
@@ -214,3 +213,79 @@ print(account.get_balance())  # Output: 1500
 - Python classes help in organizing and structuring code.
 - Key concepts include attributes, methods, inheritance, polymorphism, and encapsulation.
 - Use classes to make code reusable and maintainable.
+
+
+---
+
+# Difference Between `cls` and `self` in Python
+
+## Introduction
+
+In Python, `cls` and `self` are used as special parameters inside class methods, but they serve different purposes.
+
+| Parameter | Purpose                                   | Usage                               |
+|-----------|-------------------------------------------|-------------------------------------|
+| `self`    | Refers to the instance of the class       | Used inside instance methods       |
+| `cls`     | Refers to the class itself                | Used inside class methods          |
+
+---
+
+## 1. `self` (Instance Methods)
+
+- Represents the **current instance** of the class.
+- Used to access **instance-specific attributes and methods**.
+- Each instance of the class has its own copy of instance variables.
+
+### Example of `self`:
+
+```python
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand  # Instance attribute
+        self.model = model  # Instance attribute
+
+    def display_info(self):  # Instance method
+        print(f"Car: {self.brand} {self.model}")
+
+car1 = Car("Toyota", "Corolla")
+car2 = Car("Honda", "Civic")
+
+car1.display_info()  # Output: Car: Toyota Corolla
+car2.display_info()  # Output: Car: Honda Civic
+```
+### When to Use self:
+- When you need to work with individual instances of a class.
+- Example: Managing individual car details.
+## 2. cls (Class Methods)
+- Represents the class itself, rather than an instance.
+- Used to access class-level attributes (shared among all instances).
+- Class methods are declared using the @classmethod decorator.
+### Example of cls:
+```python
+class Car:
+    car_count = 0  # Class attribute (shared)
+
+    def __init__(self, brand):
+        self.brand = brand
+        Car.car_count += 1
+
+    @classmethod
+    def update_car_count(cls, count):
+        cls.car_count = count  # Modify class-level attribute
+
+    @classmethod
+    def get_car_count(cls):
+        return cls.car_count
+
+car1 = Car("Toyota")
+car2 = Car("Honda")
+
+print(Car.get_car_count())  # Output: 2
+
+Car.update_car_count(5)
+print(Car.get_car_count())  # Output: 5
+```
+### When to Use cls:
+- When you want to work with class-level data shared by all instances.
+- Example: Tracking the number of cars created.
+
