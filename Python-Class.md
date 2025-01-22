@@ -13,6 +13,10 @@ A class in Python is a blueprint for creating objects. It allows us to group rel
 
 ---
 
+![Components of a Class](images/class.png)
+![Components of a Class](images/class0.png)
+
+
 ## Step 1: Creating a Basic Class
 
 ```python
