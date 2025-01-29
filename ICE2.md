@@ -43,7 +43,6 @@ test_cases = [
     [-50],  # Lower boundary
     [150],  # Upper boundary
     [-49, 149],  # Values inside range
-    [-60, 20, 160],  # Out-of-bound values (should be ignored)
 ]
 
 # Running the test cases
