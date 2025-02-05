@@ -149,6 +149,38 @@ if __name__ == '__main__':
   - Finally add the screenshots of the running program, otherwise you will lose the marks.
 
 
+## Class Activity and Code
+
+```python
+def search_book(title):
+    with open('books.csv', mode='r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            if row[0].lower() == title.lower():
+                result = f'Found: Title: {row[0]}, Author: {row[1]}, Year: {row[2]}'
+                print(result)
+                return result
+    return 'Book not found'
+```
+### Test
+```python
+ef test_add_book(self):
+        """Test adding a book."""
+        add_book("Test Book", "Author Name", "2022")
+        with open("books.csv", "r") as file:
+            reader = csv.reader(file)
+            rows = list(reader)
+        self.assertIn(["Test Book", "Author Name", "2022"], rows)
+
+    def test_search_book(self):
+        """Test searching for an existing book."""
+        output_result = search_book("Test Book")  # Now it returns a value
+        expected_output = "Found: Title: Test Book, Author: Author Name, Year: 2022"
+        self.assertEqual(output_result, expected_output, "search_book did not return the expected output.")
+
+
+```
+
 
 
 
