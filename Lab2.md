@@ -164,7 +164,7 @@ def search_book(title):
 ```
 ### Test
 ```python
-ef test_add_book(self):
+   def test_add_book(self):
         """Test adding a book."""
         add_book("Test Book", "Author Name", "2022")
         with open("books.csv", "r") as file:
