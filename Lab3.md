@@ -194,5 +194,90 @@ Create a **test case design document** that includes:
 - **Student 2**: Firstname2 Lastname2
 
 ---
+---
+---
+# Unit Testing Geometric Shapes
+
+This document outlines unit testing strategies for four geometric shapes: **Circle, Trapezium, Ellipse, and Rhombus**.
+
+## 1. Circle
+A circle is defined by its **radius (r)**. Important properties include **area and circumference**.
+
+### Key Formulas:
+- **Area:** \( A = \pi r^2 \)
+- **Circumference:** \( C = 2\pi r \)
+- **Diameter:** \( D = 2r \)
+
+### Possible Unit Tests:
+- ✅ Verify **area** calculation for various radii.
+- ✅ Verify **circumference** calculation.
+- ✅ Check if **diameter** is correctly computed as \( 2r \).
+- ✅ Test **edge cases**:
+  - **r = 0** → Area & circumference should be 0.
+  - **r = 1** → Expected values \( \pi \) for area and \( 2\pi \) for circumference.
+  - **Negative radius** → Should raise an exception.
+- ✅ **Floating-point precision** checks.
+
+---
+
+## 2. Trapezium (Trapezoid)
+A **trapezium** is a quadrilateral with at least one pair of **parallel sides**.
+
+### Key Formulas:
+- **Area:** \( A = \frac{1}{2} (a + b) h \)  
+  where \( a \) and \( b \) are the **parallel sides**, and \( h \) is the **height**.
+- **Perimeter:** \( P = a + b + c + d \), where \( a, b, c, d \) are the four sides.
+
+### Possible Unit Tests:
+- ✅ Verify **area** and **perimeter** calculations.
+- ✅ Test **edge cases**:
+  - **h = 0** → Area should be 0.
+  - **Negative side lengths** → Should raise an error.
+  - **All sides equal** → Should behave as a parallelogram.
+- ✅ **Floating-point precision** checks.
+
+---
+
+## 3. Ellipse
+An **ellipse** is defined by its **semi-major axis (a)** and **semi-minor axis (b)**.
+
+### Key Formulas:
+- **Area:** \( A = \pi a b \)
+- **Perimeter (Approximate):**
+  \( P \approx \pi [3(a + b) - \sqrt{(3a + b)(a + 3b)}] \)
+
+### Possible Unit Tests:
+- ✅ Verify **area** and **perimeter** calculations.
+- ✅ Test **edge cases**:
+  - **a = b** → Should behave like a circle.
+  - **a or b = 0** → Area should be 0.
+  - **Negative values** → Should raise an error.
+- ✅ **Floating-point precision** checks.
+
+---
+
+## 4. Rhombus
+A **rhombus** is a **parallelogram** with all **four sides equal**.
+
+### Key Formulas:
+- **Area:** \( A = \frac{1}{2} d_1 d_2 \)  
+  where \( d_1 \) and \( d_2 \) are the diagonals.
+- **Perimeter:** \( P = 4s \), where \( s \) is the side length.
+
+### Possible Unit Tests:
+- ✅ Verify **area** and **perimeter** calculations.
+- ✅ Test **edge cases**:
+  - **Diagonal lengths = 0** → Area should be 0.
+  - **Side length = 0** → Perimeter should be 0.
+  - **Diagonal lengths forming a square** → Special case validation.
+- ✅ **Floating-point precision** checks.
+
+---
+
+## General Unit Testing Approach
+- Use **assertions** to compare expected vs. actual values.
+- Implement **parameterized tests** to check multiple inputs at once.
+- Test **invalid inputs** (negative values, zero where inappropriate).
+- Use **edge cases** to ensure robust handling of extreme inputs.
 
 
