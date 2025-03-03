@@ -1,6 +1,6 @@
-# INFT 1207-2: Software Testing and Automation
+# INFT 1207: Software Testing and Automation
 
-**INFT 1207-02: Software Testing and Automation**. In this course, we will discuss **in-class activities** and **lab exercises** designed to help you develop a strong foundation in software testing methodologies. The content in this repository is aimed at making software testing both practical and relevant, aligned with current **industry demands**.
+**INFT 1207: Software Testing and Automation**. In this course, we will discuss **in-class activities** and **lab exercises** designed to help you develop a strong foundation in software testing methodologies. The content in this repository is aimed at making software testing both practical and relevant, aligned with current **industry demands**.
 
 ## Overview:
 
