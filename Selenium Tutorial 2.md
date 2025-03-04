@@ -166,7 +166,7 @@ element.get_attribute("value")  # Get attribute value
 driver.implicitly_wait(10)
 ```
 
-#### **What does **``** do?**
+#### **What does **`implicitly_wait()`** do?**
 
 `implicitly_wait(10)` tells Selenium to wait up to 10 seconds for an element to be found before throwing an exception. This is useful for handling elements that take time to load dynamically.
 
@@ -177,6 +177,39 @@ alert = driver.switch_to.alert
 print(alert.text)  # Get alert text
 alert.accept()  # Accept alert
 alert.dismiss()  # Dismiss alert
+```
+
+```python
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+service = Service("C:/chromedriver-win64/chromedriver.exe")
+driver = webdriver.Chrome(service=service)
+
+
+
+
+# Open a website with JavaScript Alerts
+driver.get("https://the-internet.herokuapp.com/javascript_alerts")
+
+# Click the button to trigger an alert
+alert_button = driver.find_element(By.XPATH, "//button[text()='Click for JS Alert']")
+alert_button.click()
+
+# Switch to alert and handle it
+alert = driver.switch_to.alert
+print("Alert Message:", alert.text)  # Get the alert message
+
+# Accept the alert
+alert.accept()
+
+# Close the browser
+driver.quit()
+
 ```
 
 ### **6. Handling Frames and Windows**
