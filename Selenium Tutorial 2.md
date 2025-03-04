@@ -238,7 +238,7 @@ def driver():
     driver.quit()
 ```
 
-#### **What is **``** in Python?**
+#### **What is **`yield`** in Python?**
 
 `yield` in a fixture allows the test to run while keeping the WebDriver instance active, and once the test is done, the WebDriver is properly closed using `driver.quit()`.
 
