@@ -60,7 +60,7 @@ pip install selenium
 
 Each browser requires a WebDriver to communicate with Selenium. Download the appropriate WebDriver:
 
-- **Chrome**: [https://sites.google.com/chromium.org/driver/](https://sites.google.com/chromium.org/driver/)
+- **Chrome**: [https://googlechromelabs.github.io/chrome-for-testing/#stable](https://googlechromelabs.github.io/chrome-for-testing/#stable)
 - **Firefox (GeckoDriver)**: [https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
 
 #### **Where to Place the WebDriver?**
