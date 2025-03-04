@@ -170,7 +170,7 @@ After downloading, extract the `chromedriver.exe` to a known location and update
 ```python
 @pytest.fixture
 def driver():
-    service = Service("C:/drivers/chromedriver.exe")  # Use full path
+    service = Service("C:/chromedriver-win64/chromedriver.exe")  # Use full path 
     driver = webdriver.Chrome(service=service)
     driver.implicitly_wait(10)
     yield driver
