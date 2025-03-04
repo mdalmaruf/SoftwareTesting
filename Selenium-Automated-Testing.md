@@ -121,10 +121,11 @@ This guide will help you set up Selenium with Python for test automation.
   
   @pytest.fixture
   def driver():
-      driver = webdriver.Chrome()
-      driver.implicitly_wait(10)
-      yield driver
-      driver.quit()
+    service = Service("C:/chromedriver-win64/chromedriver.exe")  # Use full path 
+    driver = webdriver.Chrome(service=service)
+    driver.implicitly_wait(10)
+    yield driver
+    driver.quit()
   
   def test_valid_login(driver):
       driver.get("https://www.saucedemo.com/")
