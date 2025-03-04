@@ -107,7 +107,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 # Setup WebDriver
-service = Service(ChromeDriverManager().install())
+service = Service("C:/chromedriver-win64/chromedriver.exe")
 driver = webdriver.Chrome(service=service)
 
 # Open a website
