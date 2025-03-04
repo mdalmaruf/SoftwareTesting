@@ -100,12 +100,31 @@ driver = webdriver.Chrome(service=service)
 ### **1. Browser Navigation Methods**
 
 ```python
-driver.get("https://www.example.com")  # Open a URL
-driver.title  # Get page title
-driver.page_source  # Get page source
-driver.current_url  # Get current URL
-driver.close()  # Close current window
-driver.quit()  # Close all windows
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+# Setup WebDriver
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+
+# Open a website
+driver.get("https://www.example.com")
+time.sleep(2)  # Wait for page to load
+
+# Find an element by ID and extract text
+element = driver.find_element(By.TAG_NAME, "h1")
+print("Page heading:", element.text)
+
+# Print the title, source code, and current URL
+print("Page Title:", driver.title)
+print("Page Source (truncated):", driver.page_source[:500])  # Print first 500 characters
+print("Current URL:", driver.current_url)
+
+# Close the browser
+driver.quit()
 ```
 
 ### **2. Navigating Between Pages**
