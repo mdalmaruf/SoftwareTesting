@@ -219,4 +219,79 @@ pytest tests/test_login_page.py --html=reports/report.html
 ### Conclusion
 This project sets up basic Selenium automation in Python, allowing you to automate browser actions like login flows, form filling, and more. You can expand it by adding more tests or integrating with CI/CD tools later.
 
+
+
+
+
+
+## **How Selenium Works - Step by Step**
+
+Selenium automates browsers by interacting with them at a lower level using WebDriver, which acts as a bridge between the Selenium code and the browser. Let's break it down step by step.
+
+### **Step 1: Selenium Code Execution**
+When we run a Selenium script in Python (or any other language), the Selenium WebDriver API sends a request to the browser-specific WebDriver (e.g., ChromeDriver, GeckoDriver).
+
+```python
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+driver.get("https://www.google.com")
+```
+
+#### **What Happens Here?**
+- The **Selenium script** (Python code) initializes a browser instance.
+- The **WebDriver (e.g., ChromeDriver)** acts as an intermediary between the script and the actual browser.
+- A **request is sent from the Selenium WebDriver to the browser** via a WebSocket communication protocol.
+- The **browser receives the request** and processes it.
+- The **browser executes the requested action**, such as opening a URL or interacting with elements.
+- The **response is sent back** to the WebDriver, which then relays the result to Selenium.
+
+### **Step 2: Communication Between Selenium and the Browser**
+Selenium communicates with the browser through a **JSON Wire Protocol**. This is a RESTful API that sends HTTP requests from Selenium WebDriver to the browser.
+
+- Selenium sends a **HTTP request** containing instructions (e.g., open URL, click button).
+- The WebDriver forwards this request to the actual browser.
+- The browser **processes the request** and performs the required action.
+- The browser then **returns an HTTP response** with a status code (success, failure, etc.).
+- Selenium receives the response and executes the next command in the script.
+
+### **Step 3: How Requests Are Processed**
+For example, when running:
+```python
+driver.get("https://www.google.com")
+```
+- **Selenium WebDriver** sends an HTTP `POST` request to the WebDriver server (e.g., ChromeDriver) with the command to navigate to the URL.
+- **The WebDriver server** forwards the command to the browser.
+- **The browser** processes the request and loads the page.
+- **A response** is sent back confirming the page has loaded.
+
+### **Step 4: Element Interaction**
+When finding and interacting with elements:
+```python
+element = driver.find_element(By.NAME, "q")
+element.send_keys("Selenium WebDriver")
+```
+- **Selenium WebDriver** sends a `FIND ELEMENT` HTTP request to ChromeDriver.
+- **ChromeDriver** executes JavaScript in the browser to locate the element.
+- **A response** is sent back to WebDriver with the element details.
+- **WebDriver sends another request** to simulate typing into the element.
+
+### **Step 5: Receiving Responses**
+Selenium receives responses in JSON format:
+```json
+{
+    "sessionId": "123456",
+    "status": 0,
+    "value": "Page loaded successfully"
+}
+```
+A `status: 0` means success, while an error code means failure.
+
+---
+
+
+
   
