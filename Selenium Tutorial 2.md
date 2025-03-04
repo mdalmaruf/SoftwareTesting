@@ -178,7 +178,7 @@ print(alert.text)  # Get alert text
 alert.accept()  # Accept alert
 alert.dismiss()  # Dismiss alert
 ```
-
+- Another Example:
 ```python
 import time
 
