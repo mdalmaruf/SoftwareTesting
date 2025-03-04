@@ -68,13 +68,16 @@ Each browser requires a WebDriver to communicate with Selenium. Download the app
 After downloading, **place the WebDriver in a system path directory** or specify the full path in your script. If not set correctly, Selenium will throw a `WebDriverException` stating that the driver cannot be found.
 
 ```python
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-service = Service(ChromeDriverManager().install())
+#service = Service(ChromeDriverManager().install())
+service = Service("C:/chromedriver-win64/chromedriver.exe")
 driver = webdriver.Chrome(service=service)
 driver.get("https://www.google.com")
+time.sleep(3)
 ```
 
 If the WebDriver is not in the correct location, Selenium will raise an error like:
