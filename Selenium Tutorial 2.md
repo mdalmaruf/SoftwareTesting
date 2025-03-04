@@ -144,7 +144,7 @@ element = driver.find_element(By.ID, "submitButton")
 element.click()  # Click an element
 ```
 
-#### **What is **``**?**
+#### **What is **`send_keys()`**?**
 
 ```python
 element.send_keys("text")  # Enter text in an input field
