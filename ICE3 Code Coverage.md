@@ -163,6 +163,82 @@ Generate the updated coverage report in html:
 coverage html
 
 ```
+## Additional Example of UnitTest for finding Minium Value
+```python
+# minimum.py
+def find_minimum(elements):
+    if not elements:
+        raise ValueError("The list is empty")
 
+    try:
+        elements = [int(el) for el in elements]  # Try converting all elements to integers
+    except (ValueError, TypeError):
+        raise ValueError("List contains non-integer values")
+
+    return min(elements)
+```
+
+
+```python
+# test_minimum.py
+
+import unittest
+from main import find_minimum
+
+class TestMinimumFunction(unittest.TestCase):
+
+    def test_case_1(self):
+        # Test Case 1: Very short list with 1, 2, or 3 elements (This will pass)
+       self.assertEqual(find_minimum([90]), 90)  # Single element
+       self.assertEqual(find_minimum([12, 10]), 10)  # Two elements
+       self.assertEqual(find_minimum([36, 14, 12]), 12)  # Three elements
+
+    def test_case_2(self):
+        # Test Case 2: Empty list
+        with self.assertRaises(ValueError):
+            find_minimum([])
+
+    def test_case_3(self):
+        # Test Case 3: Minimum element is the first or last
+        self.assertEqual(find_minimum([10, 23, 34, 81, 97]), 10)
+        self.assertEqual(find_minimum([97, 81, 34, 23, 10]), 10)
+
+    def test_case_4(self):
+        # Test Case 4: List with negative elements
+        self.assertEqual(find_minimum([10, -2, 5, 23]), -2)
+        self.assertEqual(find_minimum([10, -2, -24, 4]), -24)
+
+    def test_case_5(self):
+        # Test Case 5: All elements are negative
+        self.assertEqual(find_minimum([-23, -31, -45, -56]), -56)
+        self.assertEqual(find_minimum([-6, -203, -2, -78]), -203)
+
+    def test_case_6(self):
+        # Test Case 6: List with some real numbers
+        with self.assertRaises(ValueError):
+            find_minimum([23, '*', 67, 33])
+
+    def test_case_7(self):
+        # Test Case 7: List with alphabetic and special characters
+        with self.assertRaises(ValueError):
+            find_minimum([23, "hi", 32, 1])
+        with self.assertRaises(ValueError):
+            find_minimum([12, "&", "*", "34m", "!"])
+
+    def test_case_8(self):
+        # Test Case 8: List with duplicate elements
+        self.assertEqual(find_minimum([3, 4, 6, 9, 6]), 3)
+        self.assertEqual(find_minimum([13, 6, 6, 9, 15]), 6)
+
+    def test_case_9(self):
+        # Test Case 9: List with one large number
+        self.assertEqual(find_minimum([530, 42444672, 97, 23, 46, 59]), 23)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+
+```
 
 
