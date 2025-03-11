@@ -1,1 +1,175 @@
 
+
+# Lab 4: Selenium IDE - Body Fat Calculator Automation
+
+This repository contains the solution for Lab 4 of INFT 1207, where students automate a Body Fat Calculator using Selenium IDE and Python.
+
+## Project Structure
+
+- **Lab4_GroupN.side**: Selenium IDE project file for recording and automating the body fat calculation.
+- **test_Lab4_firstname1_firstname2.py**: Python file exported from Selenium IDE and modified with Selenium WebDriver components.
+- **README.md**: Instructions and guidelines for running the project.
+- **demo_video.mp4**: Screen recording of the execution and explanation of the Python script and Selenium IDE setup.
+
+## Prerequisites
+
+1. **Python**: Ensure Python is installed on your machine. [Download Python](https://www.python.org/downloads/)
+2. **Selenium Package**: Install Selenium via pip:
+   ```bash
+   pip install selenium
+   ```
+3. **WebDriver**: Download the WebDriver for your browser (e.g., ChromeDriver for Chrome) and make sure it's in your system PATH. [Download ChromeDriver](https://sites.google.com/chromium.org/driver/)
+
+## Setting Up the Project
+
+### 1. Recording the Automation Steps in Selenium IDE
+
+1. Open **Selenium IDE** (available as a browser extension in Chrome or Firefox).
+2. Create a new project and name it as `Lab4_GroupN.side` (replacing `N` with your group number).
+3. **Record the Test Steps**:
+   - Go to the URL [Body Fat Calculator](https://www.calculator.net/body-fat-calculator.html).
+   - Select the gender (male or female) and input relevant data as described in the lab task.
+   - Use control flow logic to handle gender-based inputs and assertions.
+   - Ensure that each step follows the pseudocode provided in the lab instructions.
+
+4. **Save the Project**:
+   - Save your work in Selenium IDE. The project will be saved as a `.side` file (e.g., `Lab4_GroupN.side`).
+
+### 2. Exporting the Selenium IDE Project to Python
+
+Once you've completed the recording in Selenium IDE, export the project as a Python file:
+
+1. **Open the `.side` Project in Selenium IDE**.
+2. Click on the three dots in the upper-right corner of Selenium IDE to open the options menu.
+3. Select **Export** and choose **Python - Selenium WebDriver** as the format.
+4. Save the exported file as `test_Lab4_firstname1_firstname2.py` (replacing with your actual names).
+
+### 3. Making Adjustments to the Exported Python File
+
+Open `test_Lab4_firstname1_firstname2.py` in a code editor and make the following adjustments:
+
+- **Initialize WebDriver**:
+  ```python
+  from selenium import webdriver
+  from selenium.webdriver.common.by import By
+  import time
+
+  # Initialize the WebDriver
+  driver = webdriver.Chrome()  # Ensure chromedriver is in PATH
+  driver.maximize_window()
+  ```
+- **Add Control Flow Logic for Gender**:
+  ```python
+  gender = "female"  # Change to "male" as needed
+
+  if gender == "female":
+      driver.find_element(By.XPATH, "//input[@value='f']").click()  # Select female
+      driver.find_element(By.ID, "cage").send_keys("30")  # Age
+      driver.find_element(By.ID, "cheightfeet").send_keys("5")  # Height in feet
+      driver.find_element(By.ID, "cheightinch").send_keys("4")  # Height in inches
+      driver.find_element(By.ID, "cpound").send_keys("130")  # Weight in pounds
+      # Continue adding relevant inputs
+  else:
+      driver.find_element(By.XPATH, "//input[@value='m']").click()  # Select male
+      # Add values for male as per task requirements
+  ```
+
+- **Assert and Print Result**:
+  ```python
+  result_text = driver.find_element(By.XPATH, "//div[@class='rightresult']").text
+  assert "Body Fat: 23.0%" in result_text, "Unexpected result for female"
+  print("Body Fat Calculation Result:", result_text)
+  ```
+
+- **Close the Browser**:
+  ```python
+  driver.quit()
+  ```
+
+### 4. Running the Python Script
+
+1. Open a terminal in the project directory.
+2. Run the Python script:
+   ```bash
+   python test_Lab4_firstname1_firstname2.py
+   ```
+3. The script will:
+   - Navigate to the Body Fat Calculator webpage.
+   - Perform calculations based on the gender set in the code.
+   - Assert the result and print it to the console.
+4. Running the Tests
+   - To execute these tests, use the following command:
+```bash
+pytest -q test_Lab4_firstname1_firstname2.py
+
+```
+
+### 5. Recording a Video Demonstration
+
+Each partner should submit a screen recording that demonstrates:
+1. The Selenium IDE recording and playback.
+2. Any modifications made to the Python code.
+3. Successful execution of the Python script.
+
+## Submission Requirements
+
+- Include the `.side` file, Python file, and video recording in a zipped folder.
+
+
+## Additional Notes
+
+- The Python file should include an opening comment with your names, lab details, and a brief description.
+- Follow the course's naming conventions and coding standards.
+- Explore additional test cases if you wish to go beyond the mandatory requirements.
+=
+---
+
+Happy coding!
+
+
+## Sample Code for Male
+
+```python
+# Generated by Selenium IDE
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+
+class TestBodyFatCalculator:
+    def setup_method(self, method):
+        self.driver = webdriver.Chrome()
+        self.driver.set_window_size(1936, 1048)
+
+    def teardown_method(self, method):
+        self.driver.quit()
+
+    def test_body_fat_male(self):
+        # Navigate to Body Fat Calculator
+        self.driver.get("https://www.calculator.net/body-fat-calculator.html")
+
+        # Locate the Male radio button
+        male_radio = self.driver.find_element(By.ID, "csex1")
+
+        # Use JavaScript to click on the Male radio button
+        self.driver.execute_script("arguments[0].click();", male_radio)
+
+        # Continue with the rest of the test steps
+        self.driver.find_element(By.NAME, "cage").clear()
+        self.driver.find_element(By.NAME, "cage").send_keys("25")
+        self.driver.find_element(By.NAME, "cweightkgs").clear()
+        self.driver.find_element(By.NAME, "cweightkgs").send_keys("70")
+        self.driver.find_element(By.ID, "cheightmeter").clear()
+        self.driver.find_element(By.ID, "cheightmeter").send_keys("178")
+        self.driver.find_element(By.ID, "cneckmeter").clear()
+        self.driver.find_element(By.ID, "cneckmeter").send_keys("50")
+        self.driver.find_element(By.ID, "cwaistmeter").clear()
+        self.driver.find_element(By.ID, "cwaistmeter").send_keys("96")
+
+        # Calculate and verify the result
+        self.driver.find_element(By.NAME, "x").click()
+        result_text = self.driver.find_element(By.CSS_SELECTOR, "font > b").text
+        assert result_text == "Body Fat: 15.7%"
+        print("Male Test Case Result:", result_text)
+
+```
