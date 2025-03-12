@@ -158,5 +158,65 @@ Each member must submit **peer feedback** to evaluate their team members by the 
   ```
 5. Export the test results and generate HTML reports.
 
+# Example of Login Page:
+
+import time
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import NoAlertPresentException
+from webdriver_manager.chrome import ChromeDriverManager
+
+@pytest.fixture
+def driver():
+    service = Service("C:\chromedriver-win64/chromedriver.exe")  # Update with full path
+    driver = webdriver.Chrome(service=service)
+    driver.implicitly_wait(10)
+    yield driver
+    driver.quit()
+
+def test_valid_login(driver):
+    driver.get("https://demo.guru99.com/V4/")
+    time.sleep(5)
+
+    username_input = driver.find_element(By.NAME, "uid")
+    username_input.send_keys("username") #replace username
+
+    password_input = driver.find_element(By.NAME, "password")
+    password_input.send_keys("password") #replace password
+
+    login_btn = driver.find_element(By.NAME, "btnLogin")
+    login_btn.click()
+
+    assert "Manager's Page" in driver.page_source  
+
+@pytest.mark.parametrize("username, password, error", [
+    ("Invalid1", "TestX", "User or Password is not valid"),
+    ("Invalid2", "TestX", "User or Password is not valid")  
+])
+def test_invalid_login(driver, username, password, error):
+    driver.get("https://demo.guru99.com/V4/")
+    time.sleep(5)
+
+    username_input = driver.find_element(By.NAME, "uid")
+    username_input.send_keys(username)
+
+    password_input = driver.find_element(By.NAME, "password")
+    password_input.send_keys(password)
+
+    login_btn = driver.find_element(By.NAME, "btnLogin")
+    login_btn.click()
+
+    # Handling potential alert for invalid credentials
+    try:
+        alert = driver.switch_to.alert
+        assert error in alert.text  # Verify the alert message contains expected error text
+        alert.accept()  # Dismiss the alert
+    except NoAlertPresentException:
+        error_msg = driver.find_element(By.CLASS_NAME, "errorMessage")  # Adjust class name if different
+        assert error_msg.text == error  # Validate error message if no alert
+
+
 
 
