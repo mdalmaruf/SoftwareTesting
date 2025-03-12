@@ -1,5 +1,3 @@
-
-
 # Lab 4: Selenium IDE - Body Fat Calculator Automation
 
 This repository contains the solution for Lab 4 of INFT 1207, where students automate a Body Fat Calculator using Selenium IDE and Python.
