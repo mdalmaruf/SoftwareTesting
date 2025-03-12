@@ -160,6 +160,7 @@ Each member must submit **peer feedback** to evaluate their team members by the 
 
 # Example of Login Page:
 
+```python
 import time
 import pytest
 from selenium import webdriver
@@ -217,6 +218,6 @@ def test_invalid_login(driver, username, password, error):
         error_msg = driver.find_element(By.CLASS_NAME, "errorMessage")  # Adjust class name if different
         assert error_msg.text == error  # Validate error message if no alert
 
-
+```
 
 
