@@ -16,7 +16,7 @@ This repository contains the solution for Lab 4 of INFT 1207, where students aut
    ```bash
    pip install selenium
    ```
-3. **WebDriver**: Download the WebDriver for your browser (e.g., ChromeDriver for Chrome) and make sure it's in your system PATH. [Download ChromeDriver](https://sites.google.com/chromium.org/driver/)
+3. **WebDriver**: Download the WebDriver for your browser (e.g., ChromeDriver for Chrome) and make sure it's in your system PATH. [Download ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/#stable)
 
 ## Setting Up the Project
 
@@ -122,7 +122,7 @@ Each partner should submit a screen recording that demonstrates:
 =
 ---
 
-Happy coding!
+
 
 
 ## Sample Code for Male
