@@ -1,3 +1,4 @@
+```python
 import unittest                                        # ✅ Built-in Python testing framework
 from time import sleep                                 # ⏳ Adds wait between steps
 from selenium import webdriver                         # 🌐 Main Selenium WebDriver
@@ -151,3 +152,4 @@ class SeleniumTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()                                                # ▶️ Run the test suite
+```
