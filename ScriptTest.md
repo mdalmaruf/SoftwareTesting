@@ -1,30 +1,30 @@
 ```python
-import unittest                                        # ✅ Built-in Python testing framework
-from time import sleep                                 # ⏳ Adds wait between steps
-from selenium import webdriver                         # 🌐 Main Selenium WebDriver
-from selenium.webdriver.common.action_chains import ActionChains  # 🤖 For drag-and-drop
-from selenium.webdriver.support.ui import Select       # 🔽 For dropdown menus
-from webdriver_manager.chrome import ChromeDriverManager  # 🧰 Manages ChromeDriver automatically
-from selenium.webdriver.common.by import By            # 🔍 Modern way to locate elements
+import unittest                                        # Built-in Python testing framework
+from time import sleep                                 # Adds wait between steps
+from selenium import webdriver                         # Main Selenium WebDriver
+from selenium.webdriver.common.action_chains import ActionChains  # For drag-and-drop
+from selenium.webdriver.support.ui import Select       # For dropdown menus
+from webdriver_manager.chrome import ChromeDriverManager  # Manages ChromeDriver automatically
+from selenium.webdriver.common.by import By            # Modern way to locate elements
 
-from selenium.webdriver.support.ui import WebDriverWait        # 🕐 Explicit wait
-from selenium.webdriver.support import expected_conditions as EC  # ✅ Wait conditions
+from selenium.webdriver.support.ui import WebDriverWait        # Explicit wait
+from selenium.webdriver.support import expected_conditions as EC  # Wait conditions
 
 class SeleniumTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()                 # 🚘 Launch Chrome browser
-        cls.driver.maximize_window()                    # 🔍 Maximize for full visibility
+        cls.driver = webdriver.Chrome()                 # Launch Chrome browser
+        cls.driver.maximize_window()                    # Maximize for full visibility
         sleep(2)
 
     # ---------------- Test 1 -------------------
     def test01_simple_alert(self):
         driver = self.driver
-        driver.get("https://demoqa.com/alerts")         # 🌐 Load the alert page
+        driver.get("https://demoqa.com/alerts")         # Load the alert page
         sleep(2)
 
-        driver.find_element("id", "alertButton").click()  # 👆 Clicks alert trigger
+        driver.find_element("id", "alertButton").click()  # Clicks alert trigger
         alert = driver.switch_to.alert                  # 🔄 Switch to alert popup
         print("Alert Text: ", alert.text)               # 📝 Print alert message
         alert.accept()                                  # ✅ Click "OK"
@@ -40,14 +40,14 @@ class SeleniumTests(unittest.TestCase):
         print("Confirmation Alert Text: ", alert.text)
         alert.dismiss()                                  # ❌ Click "Cancel"
 
-        result = driver.find_element(By.ID, "confirmResult").text  # 🔍 Get confirmation result
+        result = driver.find_element(By.ID, "confirmResult").text  #Get confirmation result
         self.assertEqual(result, "You selected Cancel")   # ✅ Check correct output
 
     # ----------- Improved version of Test 2 ------------
     def test02_confirmation_alert_scroll(self):
         driver = self.driver
         driver.get("https://demoqa.com/alerts")
-        wait = WebDriverWait(driver, 10)                  # 🕒 Wait up to 10s
+        wait = WebDriverWait(driver, 10)                  # Wait up to 10s
 
         confirm_button = wait.until(                      # ✅ Wait until button is clickable
             EC.element_to_be_clickable((By.ID, "confirmButton"))
@@ -71,7 +71,7 @@ class SeleniumTests(unittest.TestCase):
 
         driver.find_element(By.ID, "promtButton").click()  # 👆 Trigger prompt alert
         alert = driver.switch_to.alert
-        self.assertIn("Please enter your name", alert.text)  # 🔍 Confirm prompt is correct
+        self.assertIn("Please enter your name", alert.text)  # Confirm prompt is correct
         alert.send_keys("Maruf")                          # ✍️ Input name
         alert.accept()
         result = driver.find_element(By.ID, "promptResult").text
