@@ -475,6 +475,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class TestNavigationCheck():
@@ -485,32 +486,59 @@ class TestNavigationCheck():
     def teardown_method(self, method):
         self.driver.quit()
 
+
+
     def test_navigationCheck(self):
         self.driver.get("https://magento.softwaretestingboard.com/")
         self.driver.set_window_size(1534, 912)
-        element = self.driver.find_element(By.CSS_SELECTOR, "#ui-id-4 > span:nth-child(2)")
-        actions = ActionChains(self.driver)
-        actions.move_to_element(element).perform()
-        element = self.driver.find_element(By.ID, "ui-id-9")
-        actions = ActionChains(self.driver)
-        actions.move_to_element(element).perform()
-        self.driver.find_element(By.ID, "ui-id-12").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".filter-options-item:nth-child(1)").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".filter-options-item:nth-child(1) > .filter-options-title").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".filter-options-item:nth-child(1) > .filter-options-title").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".allow .item:nth-child(3) > a").click()
-        self.driver.find_element(By.XPATH, "//div[2]/div[3]/div").click()
-        self.driver.find_element(By.XPATH, "//div[2]/div[3]/div/div").click()
-        self.driver.find_element(By.XPATH, "//div[@id=\'narrow-by-list\']/div/div[2]/div/div/a[3]/div").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".filter-options-item:nth-child(2)").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".filter-options-item:nth-child(2) > .filter-options-title").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".swatch-option-link-layered:nth-child(1) > .swatch-option").click()
-        element = self.driver.find_element(By.XPATH,
-                                           "//main[@id=\'maincontent\']/div[3]/div/div[3]/ol/li/div/a/span/span/img")
-        actions = ActionChains(self.driver)
-        actions.move_to_element(element).perform()
-        self.driver.find_element(By.CSS_SELECTOR, ".product-item-inner:nth-child(4) .actions-primary .action").click()
-        self.driver.find_element(By.CSS_SELECTOR, ".showcart > .counter").click()
+
+        wait = WebDriverWait(self.driver, 10)  # waits up to 10 seconds
+
+        # Hover over "What's New"
+        element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#ui-id-4 > span:nth-child(2)")))
+        ActionChains(self.driver).move_to_element(element).perform()
+
+        # Hover over "Women"
+        element = wait.until(EC.visibility_of_element_located((By.ID, "ui-id-9")))
+        ActionChains(self.driver).move_to_element(element).perform()
+
+        # Click on "Tops"
+        wait.until(EC.element_to_be_clickable((By.ID, "ui-id-12"))).click()
+
+        # Open first filter
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".filter-options-item:nth-child(1)"))).click()
+        wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, ".filter-options-item:nth-child(1) > .filter-options-title"))).click()
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".allow .item:nth-child(3) > a"))).click()
+
+        # Select next filters with waits
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//div[2]/div[3]/div"))).click()
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//div[2]/div[3]/div/div"))).click()
+        # wait.until(
+        #     EC.element_to_be_clickable((By.XPATH, "//div[@id='narrow-by-list']/div/div[2]/div/div/a[3]/div"))).click()
+
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//div[2]/div[3]/div[2]"))).click()
+        wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//div[2]/div[3]/div[2]/div"))).click()
+        wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//div[2]/div[3]/div[2]/div"))).click()
+        wait.until(EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, ".swatch-option-link-layered:nth-child(2) > .swatch-option"))).click()
+
+        # Hover over product image
+        element = wait.until(EC.visibility_of_element_located(
+            (By.XPATH, "//main[@id='maincontent']/div[3]/div/div[3]/ol/li/div")))
+        ActionChains(self.driver).move_to_element(element).perform()
+
+        # Click "Add to Cart"
+        wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "//main[@id='maincontent']/div[3]/div/div[3]/ol/li/div/div/div[3]/div/div/form/button/span"))).click()
+
+        wait = WebDriverWait(self.driver, 10)  # waits up to 10 seconds
+        
+        # # Click cart icon
+        wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".showcart > .counter"))).click()
+
 
 
 ```
