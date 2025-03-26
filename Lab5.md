@@ -534,10 +534,12 @@ class TestNavigationCheck():
         wait.until(EC.element_to_be_clickable(
             (By.XPATH, "//main[@id='maincontent']/div[3]/div/div[3]/ol/li/div/div/div[3]/div/div/form/button/span"))).click()
 
-        wait = WebDriverWait(self.driver, 10)  # waits up to 10 seconds
-        
+        time.sleep(10)
+
         # # Click cart icon
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".showcart > .counter"))).click()
+
+        time.sleep(5)
 
 
 
