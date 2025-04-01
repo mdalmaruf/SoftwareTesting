@@ -4,7 +4,7 @@ The following code explains the structure, components, and functionality of thre
 
 ---
 
-```
+
 
 
 ### 1. **Common Imports and Setup**
@@ -21,6 +21,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 - `webdriver`: Provides an interface to interact with the browser.
 - `By`: Used to locate elements using different strategies (ID, NAME, CLASS_NAME, etc.).
 - `ChromeDriverManager`: Automatically manages and installs the correct ChromeDriver.
+
+  
 ```python
 import unittest
 from time import sleep
@@ -61,6 +63,7 @@ class CheckboxDemo(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.quit()
 
+```
 ---
 
 
