@@ -22,48 +22,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 - `By`: Used to locate elements using different strategies (ID, NAME, CLASS_NAME, etc.).
 - `ChromeDriverManager`: Automatically manages and installs the correct ChromeDriver.
 
-  
-```python
-import unittest
-from time import sleep
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 
-class CheckboxDemo(unittest.TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
-        cls.driver.maximize_window()
-        sleep(2)
-
-    def test01_checkbox(self):
-        driver = self.driver
-        driver.get("http://demo.guru99.com/test/radio.html")
-        sleep(5)
-
-        # Locate checkboxes
-        checkbox1 = driver.find_element(By.ID, "vfb-6-0")
-        checkbox2 = driver.find_element(By.ID, "vfb-6-1")
-        checkbox3 = driver.find_element(By.ID, "vfb-6-2")
-
-        # Click checkbox 2 and 3
-        checkbox2.click()
-        sleep(1)
-        checkbox3.click()
-        sleep(1)
-
-        # Assertions
-        self.assertTrue(checkbox2.is_selected())
-        self.assertTrue(checkbox3.is_selected())
-        self.assertFalse(checkbox1.is_selected())
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()
-
-```
 ---
 
 
@@ -109,6 +68,86 @@ self.assertTrue(checkbox3.is_selected())
 self.assertFalse(checkbox1.is_selected())
 ```
 - Validates selection status of each checkbox.
+
+  
+```python
+import unittest
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
+class CheckboxDemo(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.driver = webdriver.Chrome()
+        cls.driver.maximize_window()
+        sleep(2)
+
+    def test01_checkbox(self):
+        driver = self.driver
+        driver.get("http://demo.guru99.com/test/radio.html")
+        sleep(5)
+
+        # Locate checkboxes
+        checkbox1 = driver.find_element(By.ID, "vfb-6-0")
+        checkbox2 = driver.find_element(By.ID, "vfb-6-1")
+        checkbox3 = driver.find_element(By.ID, "vfb-6-2")
+
+        # Click checkbox 2 and 3
+        checkbox2.click()
+        sleep(1)
+        checkbox3.click()
+        sleep(1)
+
+        # Assertions
+        self.assertTrue(checkbox2.is_selected())
+        self.assertTrue(checkbox3.is_selected())
+        self.assertFalse(checkbox1.is_selected())
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
+
+```
+---
+
+
+  
+### 3. **Radio Button Handling: `RadioButtonDemo`**
+
+#### Setup:
+Same as checkbox class.
+
+#### Test Method:
+```python
+def test01_radiobutton(self):
+    driver.get("http://demo.guru99.com/test/radio.html")
+```
+- Opens the demo page containing radio buttons.
+
+##### Radio Button Actions:
+```python
+option1 = driver.find_element(By.ID, "vfb-7-1")
+option3 = driver.find_element(By.ID, "vfb-7-3")
+option1.click()
+option3.click()
+```
+- Clicking on option3 deselects option1 since only one radio can be selected.
+
+##### Assertions:
+```python
+self.assertTrue(option3.is_selected())
+self.assertFalse(option1.is_selected())
+```
+
+##### Count All Radio Buttons:
+```python
+radio_buttons = driver.find_elements(By.NAME, "vfb-7")
+print(f"Total radio buttons found: {len(radio_buttons)}")
+```
+- Useful for debugging or verifying number of elements.
 ```python
 import unittest
 from time import sleep
@@ -151,44 +190,6 @@ class RadioButtonDemo(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.quit()
 ```  
----
-
-
-  
-### 3. **Radio Button Handling: `RadioButtonDemo`**
-
-#### Setup:
-Same as checkbox class.
-
-#### Test Method:
-```python
-def test01_radiobutton(self):
-    driver.get("http://demo.guru99.com/test/radio.html")
-```
-- Opens the demo page containing radio buttons.
-
-##### Radio Button Actions:
-```python
-option1 = driver.find_element(By.ID, "vfb-7-1")
-option3 = driver.find_element(By.ID, "vfb-7-3")
-option1.click()
-option3.click()
-```
-- Clicking on option3 deselects option1 since only one radio can be selected.
-
-##### Assertions:
-```python
-self.assertTrue(option3.is_selected())
-self.assertFalse(option1.is_selected())
-```
-
-##### Count All Radio Buttons:
-```python
-radio_buttons = driver.find_elements(By.NAME, "vfb-7")
-print(f"Total radio buttons found: {len(radio_buttons)}")
-```
-- Useful for debugging or verifying number of elements.
-
 ---
 
 ### 4. **Date Picker Handling: `DatePickingDemo`**
