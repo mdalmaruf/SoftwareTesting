@@ -505,6 +505,9 @@ class TestNavigationCheck():
         # Click on "Hoodies and Sweatshirts"
         wait.until(EC.element_to_be_clickable((By.ID, "ui-id-12"))).click()
 
+       #  wait.until(
+       #     EC.element_to_be_clickable((By.XPATH, "//div[@id='narrow-by-list']/div/div[2]/ol/li[3]/a"))).click()
+
         # Open first filter 'Style'
         wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".filter-options-item:nth-child(1)"))).click()
         wait.until(EC.element_to_be_clickable(
