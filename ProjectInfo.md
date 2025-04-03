@@ -194,9 +194,9 @@ class TestNewCustomer():
         #self.driver.find_element(By.CSS_SELECTOR, ".heading3 > td").click()
         assert self.driver.find_element(By.CSS_SELECTOR, ".heading3 > td").text == "Manger Id : mngr615627"
 
-    # def NC1(self):
+    # def test_NC1(self):
            #check the excel file provided in the Project Submission Folder 
-    def NC2(self):
+    def test_NC2(self):
         self.driver.get("https://demo.guru99.com/V4/manager/Managerhomepage.php")
         self.driver.set_window_size(1534, 912)
         self.driver.find_element(By.LINK_TEXT, "New Customer").click()
@@ -207,10 +207,10 @@ class TestNewCustomer():
 
  
 
-   # def NC3(self):
+   # def test_NC3(self):
       #check the excel file provided in the Project Submission Folder
 
-   # def NC4(self):
+   # def test_NC4(self):
       #check the excel file provided in the Project Submission Folder 
 
 ```
