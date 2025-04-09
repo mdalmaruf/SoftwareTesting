@@ -165,6 +165,8 @@ Each member must submit **peer feedback** to evaluate their team members by the 
 import pytest
 import time
 import json
+import unittest
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -174,12 +176,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-class TestNewCustomer():
-    def setup_method(self, method):
+class TestNewCustomer(unittest.TestCase):
+    def setUp(self):
         self.driver = webdriver.Firefox()
-        self.vars = {}
+        self.driver.maximize_window()
 
-    def teardown_method(self, method):
+    def tearDown(self):
         self.driver.quit()
 
     def test_login(self):
@@ -194,8 +196,23 @@ class TestNewCustomer():
         #self.driver.find_element(By.CSS_SELECTOR, ".heading3 > td").click()
         assert self.driver.find_element(By.CSS_SELECTOR, ".heading3 > td").text == "Manger Id : mngr615627"
 
-    # def test_NC1(self):
-           #check the excel file provided in the Project Submission Folder 
+    def test_NC1(self):
+        self.driver.get("https://demo.guru99.com/V4/manager/Managerhomepage.php")
+        self.driver.find_element(By.LINK_TEXT, "New Customer").click()
+
+        customer_name_field = self.driver.find_element(By.NAME, "name")
+        customer_name_field.click()
+        # Shift focus to trigger validation
+        customer_name_field.send_keys(Keys.TAB)
+
+        error_message_element = self.driver.find_element(By.ID, "message")
+
+
+        actual_error_message = error_message_element.text
+        expected_error_message = "Customer name must not be blank"
+        self.assertEqual(actual_error_message, expected_error_message)
+
+
     def test_NC2(self):
         self.driver.get("https://demo.guru99.com/V4/manager/Managerhomepage.php")
         self.driver.set_window_size(1534, 912)
